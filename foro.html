@@ -1,0 +1,23 @@
+<form action="https://staticman3.herokuapp.com/v3/entry/github/nicocausade/nicocausade.github.io/main/comments" method="POST">
+
+  <input type="hidden" name="options[slug]" value="foro">
+
+  <label>Nombre</label>
+  <input type="text" name="fields[name]">
+
+  <label>Mensaje</label>
+  <textarea name="fields[message]"></textarea>
+
+  <button type="submit">Enviar comentario</button>
+</form>
+
+<div id="comentarios"></div>
+
+<script>
+async function cargarComentarios() {
+  const res = await fetch('/data/comments/foro/');
+  const texto = await res.text();
+  document.getElementById("comentarios").innerHTML = "<pre>" + texto + "</pre>";
+}
+cargarComentarios();
+</script>
