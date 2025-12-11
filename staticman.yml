@@ -1,4 +1,4 @@
-hcomments:
+comments:
   allowedFields: ["name", "message"]
   branch: "main"
   commitMessage: "Nuevo comentario"
@@ -9,3 +9,4 @@ hcomments:
   requiredFields: ["message"]
   transforms:
     message: "trim"
+
